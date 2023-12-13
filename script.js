@@ -3,15 +3,15 @@ const box = document.querySelector('.box');
 const question = document.querySelector('.question');
 const yesBtn = document.querySelector('.yes-btn');
 const noBtn = document.querySelector('.no-btn');
-const open = document.querySelector('.box h2');
-const img = document.querySelector('img');
+const openBox = document.querySelector('.box h2');
+const img = document.querySelector('.wrapper img');
 const btnGroup = document.querySelector('.btn-group');
 const mp3 = document.querySelector('audio');
 
 const wrapperRect = wrapper.getBoundingClientRect();
 const noBtnRect = noBtn.getBoundingClientRect();
 
-open.addEventListener('click', () => {
+openBox.addEventListener('click', () => {
     setTimeout(() => {
         box.style.display = "none";
         wrapper.style.display = "flex";
@@ -24,6 +24,9 @@ yesBtn.addEventListener('click', () => {
     img.src = "/img/2.gif";
     question.innerHTML = 'I Love You Too :)';
     btnGroup.style.opacity = "0";
+    setTimeout(() => {
+        img.src = "/img/4.gif";
+    }, 4000);
 });
 
 noBtn.addEventListener('mouseover', () => {
@@ -33,5 +36,3 @@ noBtn.addEventListener('mouseover', () => {
     noBtn.style.left = i + 'px';
     noBtn.style.top = j + 'px';
 });
-
-
